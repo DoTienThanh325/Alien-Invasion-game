@@ -10,7 +10,7 @@ class Ship:
         self.settings = ai_game.settings
 
         # Tạo biến image và lấy kích thước của ảnh
-        self.image = pygame.image.load("Alien Invasion remake/images/spaceship.png")
+        self.image = pygame.image.load("D:\pythonLabICN\Alien Invasion remake\images\spaceship.png")
         self.rect = self.image.get_rect()
 
         # Cho vị trí trung tâm cạnh dưới của ảnh trùng vời trung tâm cạnh dưới của màn hình
@@ -23,6 +23,11 @@ class Ship:
         # lưu trữ vị trí con tàu là số thực 
         self.x = float(self.rect.x)
     
+    def center_ship(self):
+        # Cho vị trí trung tâm cạnh dưới của ảnh trùng vời trung tâm cạnh dưới của màn hình
+        self.rect.midbottom = self.screen_rect.midbottom
+        self.x = float(self.rect.x)
+        
     def update(self):
         if self.moving_left and self.rect.left > 0:
             self.x -= self.settings.ship_speed
